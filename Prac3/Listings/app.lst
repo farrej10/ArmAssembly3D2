@@ -1,0 +1,74 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             AsmTemplate, CODE, READONLY
+    2 00000000                 IMPORT           main
+    3 00000000         
+    4 00000000         ; sample program makes the 4 LEDs P1.16, P1.17, P1.18, P
+                       1.19 go on and off in sequence
+    5 00000000         ; (c) Mike Brady, 2011.
+    6 00000000         
+    7 00000000                 EXPORT           start
+    8 00000000         start
+    9 00000000 E3A00103        mov              r0, #0xc0000000
+   10 00000004 E3A0120F        mov              r1, #0xf0000000
+   11 00000008 E0513000        subs             r3,r1,r0
+   12 0000000C         
+   13 0000000C EAFFFFFE 
+                       stop    B                stop
+   14 00000010         
+   15 00000010                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\a
+pp.d -o.\app.o -IC:\Keil_v5\ARM\RV31\INC -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Ke
+il_v5\ARM\Inc\Philips --predefine="__EVAL SETA 1" --predefine="__MICROLIB SETA 
+1" --predefine="__UVISION_VERSION SETA 516" --list=.\listings\app.lst App.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+AsmTemplate 00000000
+
+Symbol: AsmTemplate
+   Definitions
+      At line 1 in file App.s
+   Uses
+      None
+Comment: AsmTemplate unused
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 8 in file App.s
+   Uses
+      At line 7 in file App.s
+Comment: start used once
+stop 0000000C
+
+Symbol: stop
+   Definitions
+      At line 13 in file App.s
+   Uses
+      At line 13 in file App.s
+Comment: stop used once
+3 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+main 00000000
+
+Symbol: main
+   Definitions
+      At line 2 in file App.s
+   Uses
+      None
+Comment: main unused
+1 symbol
+337 symbols in table
